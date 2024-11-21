@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado del Cálculo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Calculo de compras</h2>
+        <form method="POST">
+            <label for="name">Ingresa tu nombre:</label>
+            <input type="text" id="name" name="name" required value="{{ name }}">
+
+            <label for="age">Ingresa tu edad:</label>
+            <input type="number" id="age" name="age" required value="{{ age }}">
+
+            <label for="quantity">Ingresa la cantidad de tarros de pintura a comprar:</label>
+            <input type="number" id="quantity" name="quantity" required value="{{ quantity }}">
+
+            <button type="submit" class="button blue">Calcular</button>
+        </form>
+
+        <div class="result">
+            <p>Nombre del cliente: {{ name }}</p>
+            <p>Total sin descuento: ${{ total_without_discount }}</p>
+            <p>El descuento es: ${{ discount_amount }}</p>
+            <p>El total a pagar es de: ${{ total_with_discount }}</p>
+        </div>
+    </div>
+</body>
+</html>
+
